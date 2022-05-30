@@ -87,7 +87,7 @@ body {
 }
 
 .background-logo {
-    background-image: url("staticogo-color.svg");
+    background-image: url("static/logo-color.svg");
     background-position: right -410px bottom -530px;
     background-repeat: no-repeat;
 }

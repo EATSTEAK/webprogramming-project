@@ -2,9 +2,10 @@
   "name": "webprogramming-project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/EATSTEAK/webprogramming-project/issues"
   },
-  "homepage": "https://github.com/EATSTEAK/webprogramming-project#readme"
+  "homepage": "https://github.com/EATSTEAK/webprogramming-project#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "lowdb": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16",
+    "prettier": "^2.6.2"
+  }
 }
