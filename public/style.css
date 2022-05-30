@@ -1,0 +1,342 @@
+:root {
+    --size-1: 0.1rem;
+    --size-2: 0.5rem;
+    --size-3: 1rem;
+    --size-4: 2rem;
+    --full-height: calc(100vh - 68px);
+}
+
+html {
+    line-height: 1.6em;
+    word-break: keep-all;
+    min-height: 100vh;
+    background: #FFFFFF linear-gradient(71.87deg, rgba(232, 17, 35, 0.8) 0%, rgba(247, 99, 12, 0.8) 43.67%, rgba(255, 185, 0, 0.8) 82.75%) fixed;
+}
+
+body {
+    display: flow-root;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+    margin: 0;
+}
+
+.container {
+    box-sizing: border-box;
+    --container-size: 100%;
+    width: var(--container-size);
+    margin: 0 auto;
+    padding-top: var(--size-3);
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+}
+
+.navbar .container-wide {
+    display: flex;
+    align-items: center;
+}
+
+.container-wide {
+    min-width: 100%;
+    padding: 0 var(--size-2);
+    box-sizing: border-box;
+}
+
+.navbar-logo {
+    display: inline flow-root;
+}
+
+.navbar-link {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: white;
+}
+
+.navbar-link li {
+    padding: var(--size-2);
+}
+
+.navbar-link a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-link-selected {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar-logo img {
+    filter: invert(1);
+}
+
+.navbar-padding {
+    margin-bottom: 68px;
+}
+
+.full-page {
+    min-height: var(--full-height);
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    height: auto;
+}
+
+.background-logo {
+    background-image: url("staticogo-color.svg");
+    background-position: right -410px bottom -530px;
+    background-repeat: no-repeat;
+}
+
+.intro {
+    box-sizing: border-box;
+    padding-top: var(--size-4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.intro-header {
+    word-break: break-all;
+    line-height: 1.2em;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.intro-subheader {
+    line-height: 1.2em;
+    font-size: 2rem;
+}
+
+.text {
+    padding: var(--size-1) 0;
+}
+
+.g-blue-red {
+    background: linear-gradient(272.89deg, #E81123 1.91%, #E81123 35.3%, #0078D7 96.2%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+.color-red {
+    color: #E81123;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.color-white {
+    color: white;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin: var(--size-2);
+    padding: 0;
+}
+
+.center-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+#scroll_to_more {
+    padding-bottom: var(--size-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#careers {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+#careers main {
+    padding: var(--size-3);
+    text-align: center;
+    flex: 0 1;
+}
+
+#careers .list {
+    display: flex;
+    flex: 1 0;
+}
+
+#careers ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#careers .selected {
+    background-color: black;
+    color: white;
+}
+
+#careers li {
+    padding: var(--size-2);
+}
+
+#careers .arrow {
+    width: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#careers .arrow-bar {
+    width: 4px;
+    flex-grow: 1;
+    background-color: black;
+}
+
+#careers .arrow-head {
+    overflow: visible;
+    margin-top: -8px;
+    width: 48px;
+}
+
+#projects ul {
+    list-style-type: none;
+    display: flex;
+    overflow-x: scroll;
+    padding: 0;
+}
+
+#projects .selected img {
+    border: 2px solid black;
+    border-radius: 12px;
+}
+
+#project_details {
+    position: relative;
+    z-index: -1;
+}
+
+#contacts label {
+    display: block;
+    margin-top: var(--size-2);
+}
+
+#contacts input {
+    border: none;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    border-radius: 4px;
+    padding: var(--size-2);
+}
+
+#contacts .form-group {
+    display: flex;
+    width: 80%;
+}
+
+#contacts form input {
+    width: 80%;
+}
+
+#contacts form .form-group input {
+    width: 90%;
+}
+
+#contacts .form-group div {
+    padding-right: var(--size-2);
+    flex-grow: 1;
+}
+
+#contacts form textarea {
+    border: none;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    border-radius: 4px;
+    width: 80%;
+    padding: var(--size-2);
+}
+
+#contacts form button {
+    border: none;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    border-radius: 4px;
+    padding: var(--size-3);
+    width: 200px;
+    background-color: #5C9DFF;
+    color: white;
+}
+
+#contacts .submit {
+    margin: var(--size-2) 0;
+}
+
+#project_details article {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    padding: var(--size-3);
+}
+
+#project_details article h1,p {
+    margin: 0;
+}
+
+#projects li {
+    margin: 0 var(--size-2);
+}
+
+#projects li img {
+    width: 64px;
+}
+
+@media screen and (max-width: 576px) {
+    body {
+        font-size: 12px;
+    }
+    .intro-header {
+        font-size: 3rem;
+    }
+
+    .intro-subheader {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        --container-size: 90%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .container {
+        --container-size: 540px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .container {
+        --container-size: 720px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .container {
+        --container-size: 960px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        --container-size: 1140px;
+    }
+}

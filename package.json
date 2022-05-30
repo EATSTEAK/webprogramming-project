@@ -1,0 +1,19 @@
+{
+  "name": "webprogramming-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EATSTEAK/webprogramming-project.git"
+  },
+  "author": "Hyomin Koo (EATSTEAK)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EATSTEAK/webprogramming-project/issues"
+  },
+  "homepage": "https://github.com/EATSTEAK/webprogramming-project#readme"
+}
