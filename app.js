@@ -1,5 +1,5 @@
 import express from "express";
-import { apiRouter } from "./api.js";
+import { apiRouter, db } from "./api.js";
 
 // Express Init
 const app = express();
@@ -9,8 +9,12 @@ const port = 3000;
 app.set("view engine", "ejs");
 
 // front page serving
-app.get("/", (req, res) => {
-  res.render("index");
+app.get("/", async (req, res) => {
+  await db.read();
+  db.data ||= { increment: 0, posts: [] };
+  res.render("index", {
+    posts: db.data.posts,
+  });
 });
 
 app.use("/api", apiRouter);

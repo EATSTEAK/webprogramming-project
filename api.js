@@ -10,7 +10,7 @@ export const apiRouter = express.Router();
 // Database Init
 const file = join(__dirname, "db.json");
 const adapter = new JSONFile(file);
-const db = new Low(adapter);
+export const db = new Low(adapter);
 
 apiRouter.use(express.json());
 
@@ -32,7 +32,7 @@ apiRouter.get("/posts", async (req, res) => {
 apiRouter.post("/posts", async (req, res) => {
   const body = req.body;
   if (!body.name || !body.title || !body.content || !body.password) {
-    res.sendStatus(500).send("Wrong post definition");
+    res.status(500).send("Wrong post definition");
     return;
   }
   await db.read();
@@ -58,32 +58,31 @@ apiRouter.put("/posts/:postId", async (req, res) => {
     !req.headers.authorization ||
     !req.headers.authorization.startsWith("Basic ")
   ) {
-    res.sendStatus(403).send("Wrong authorization sent.");
-    return;
+    return res.status(403).send("Wrong authorization sent.");
   }
   const body = req.body;
   if (!body.name && !body.title && !body.content) {
-    res.sendStatus(500).send("Wrong post definition.");
-    return;
+    return res.status(500).send("Wrong post definition.");
   }
   await db.read();
   const targetIdx = db.data.posts.findIndex(
     (post) => post.id === parseInt(req.params.postId)
   );
   if (targetIdx < 0) {
-    res.sendStatus(404).send("Not found");
-    return;
+    return res.status(404).send("Not found");
   }
   const target = db.data.posts[targetIdx];
   const auth = req.headers.authorization.split(" ")[1];
-  const authDecoded = Buffer.from(auth, "base64").toString("utf8").split(":");
+  const authDecoded = Buffer.from(auth, "base64")
+    .toString("utf16le")
+    .split(":");
   if (
     authDecoded.length < 2 ||
     authDecoded[0] !== target.name ||
     authDecoded[1] !== target.password
   ) {
-    res.sendStatus(401).send("Unauthorized");
-    return;
+    console.log(authDecoded);
+    return res.status(401).send("Unauthorized");
   }
   const modifiedPost = {
     ...target,
@@ -104,27 +103,24 @@ apiRouter.delete("/posts/:postId", async (req, res) => {
     !req.headers.authorization ||
     !req.headers.authorization.startsWith("Basic ")
   ) {
-    res.sendStatus(403).send("Wrong authorization sent.");
-    return;
+    return res.status(403).send("Wrong authorization sent.");
   }
   await db.read();
   const targetIdx = db.data.posts.findIndex(
     (post) => post.id === parseInt(req.params.postId)
   );
-  if (targetIdx < 0) {
-    res.sendStatus(404).send("Not found");
-    return;
-  }
+  if (targetIdx < 0) return res.status(404).send("Not found");
   const target = db.data.posts[targetIdx];
   const auth = req.headers.authorization.split(" ")[1];
-  const authDecoded = Buffer.from(auth, "base64").toString("utf8").split(":");
+  const authDecoded = Buffer.from(auth, "base64")
+    .toString("utf16le")
+    .split(":");
   if (
     authDecoded.length < 2 ||
     authDecoded[0] !== target.name ||
     authDecoded[1] !== target.password
   ) {
-    res.sendStatus(401).send("Unauthorized");
-    return;
+    return res.status(401).send("Unauthorized");
   }
   db.data.posts.splice(targetIdx, 1);
   await db.write();

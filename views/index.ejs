@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" as="style" href="style.css" />
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <script src="./script.js"></script>
     <title>EATSTEAK</title>
 </head>
 <body>
@@ -65,9 +66,9 @@
                         <div class="arrow-bar"></div>
                         <img class="arrow-head" src="static/icon-down.svg">
                     </aside>
-                    <ul>
-                        <li>
-                            <img src="static/careers/ytct2020.png">
+                    <ul id="career_list">
+                        <li class="selected">
+                            <img src="static/careers/ytct2020.webp" width="72px" height="72px">
                             <div>
                                 <h2>기획/개발 - YouTube Creator Town 2020</h2>
                                 <p>
@@ -77,7 +78,7 @@
                                 </p>
                             </div>
                         </li>
-                        <li class="selected">
+                        <li>
                             <img src="static/careers/soongsil.svg" width="72px" height="72px">
                             <div>
                                 <h2>숭실대학교 글로벌미디어학부</h2>
@@ -89,7 +90,7 @@
                             </div>
                         </li>
                         <li>
-                            <img src="static/careers/ytct2021.png">
+                            <img src="static/careers/ytct2021.webp" width="72px" height="72px">
                             <div>
                                 <h2>개발팀 리드 - YouTube Creator Town 2021</h2>
                                 <p>
@@ -100,7 +101,7 @@
                             </div>
                         </li>
                         <li>
-                            <img src="static/careers/oms.png">
+                            <img src="static/careers/oms.webp" width="72px" height="72px">
                             <div>
                                 <h2>상무이사 @ (주)우마공크리에이티브</h2>
                                 <p>
@@ -112,10 +113,24 @@
                         </li>
                     </ul>
                 </aside>
-                <main>
-                    <img src="static/careers/soongsil.svg" width="240px" height="240px">
-                    <p>2021년 3월부터 숭실대학교 글로벌미디어학부 학부생으로 재학중입니다.</p>
-                </main>
+                <div id="career_detail_list">
+                    <main class="selected">
+                        <img src="static/careers/ytct2020.webp" width="240px" height="240px">
+                        <p>2020년 진행된 유튜브 크리에이터 타운 프로젝트에 개발 및 기획자로 참여하였습니다.</p>
+                    </main>
+                    <main>
+                        <img src="static/careers/soongsil.svg" width="240px" height="240px">
+                        <p>2021년 3월부터 숭실대학교 글로벌미디어학부 학부생으로 재학중입니다.</p>
+                    </main>
+                    <main>
+                        <img src="static/careers/ytct2021.webp" width="240px" height="240px">
+                        <p>2021년 진행된 유튜브 크리에이터 타운 프로젝트에 개발팀 리드로 참여하였습니다.</p>
+                    </main>
+                    <main>
+                        <img src="static/careers/oms.webp" width="240px" height="240px">
+                        <p>2021년 5월부터 (주)우마공크리에이티브의 상무이사이자 CTO로 재직하고 있습니다.</p>
+                    </main>
+                </div>
             </article>
         </div>
     </section>
@@ -154,62 +169,174 @@
         <div id="projects" class="container">
             <h1><span class="bg-black color-white intro-subheader">PROJECTS</span></h1>
             <section>
-                <ul>
-                    <li><img src="static/projects/ytct2020.png"></li>
-                    <li class="selected"><img src="static/projects/ytct2021.png"></li>
+                <ul id="project_list">
+                    <li class="selected"><img src="static/projects/ytct2020.png"></li>
+                    <li><img src="static/projects/ytct2021.png"></li>
                     <li><img src="static/projects/arcinfo.png"></li>
                     <li><img src="static/projects/comet.png"></li>
                 </ul>
-                <div id="project_details">
-                    <img src="static/projects/ytct2021_details.png" width="100%">
+                <div id="project_thumbnail_list">
+                    <div style="background-image: url('./static/projects/ytct2020_details.jpg');" class="selected">
+                        <article>
+                            <h2>유튜브 크리에이터타운 2020</h2>
+                            <p>YouTube Creator Town 2020</p>
+                        </article>
+                    </div>
+                    <div style="background-image: url('./static/projects/ytct2021_details.png');">
+                        <article>
+                            <h2>유튜브 크리에이터타운 2021 대운동회</h2>
+                            <p>YouTube Creator Town 2021</p>
+                        </article>
+                    </div>
+                    <div style="background-image: url('./static/projects/arcinfo_details.png');">
+                        <article>
+                            <h2>ARCINFO</h2>
+                            <p>Arcaea Information Service</p>
+                        </article>
+                    </div>
+                    <div style="background-image: url('./static/projects/comet_details.png');">
+                        <article>
+                            <h2>COMET</h2>
+                            <p>Combination of Operation and Management Engaging Tools</p>
+                        </article>
+                    </div>
+                </div>
+                <div id="project_detail_list">
+                    <article class="selected">
+                        <p><b>IN DEVELOPMENT /</b> 2020.05~PRODUCTION DAY</p>
+                        <p><b>IN PRODUCTION /</b> 2021.12.18~2021.12.20</p>
+                        <p><b>ROLE /</b> 개발, 기획(Developer & Project Designer)</p>
+                        <p><b>USED SKILLS /</b> Kotlin</p>
+                        <p>
+                            <b>DESCRIPTION /</b><br />
+                            3일간 크리에이터에게 모험을 제공하는 컨셉으로 진행된 행사입니다. 전체적인 행사의 컨텐츠 기획 및 개발을 담당하였습니다.
+                        </p>
+                    </article>
                     <article>
-                        <h2>유튜브 크리에이터타운 2021 대운동회</h2>
-                        <p>YouTube Creator Town 2021</p>
+                        <p><b>IN DEVELOPMENT /</b> 2021.07~PRODUCTION DAY</p>
+                        <p><b>IN PRODUCTION /</b> 2021.09.30~2021.10.01</p>
+                        <p><b>ROLE /</b> 개발팀 리드(Lead Developer)</p>
+                        <p><b>USED SKILLS /</b> Kotlin, Spring Boot, Google Cloud Platform, Pulumi...</p>
+                        <p>
+                            <b>DESCRIPTION /</b><br />
+                            이틀간 약 300명의 크리에이터들을 대상으로 게임 "마인크래프트" 내 메타버스 공간에서 운동회를 진행한다는 컨셉으로 진행된 행사입니다. 서버와 클라이언트의 부하가 큰 게임의 특성 상 클라이언트와 서버의 수정, 콘텐츠 구현을 중점으로 최적화, 클라우드 관리까지 총괄하여 진행하였습니다.
+                        </p>
+                    </article>
+                    <article>
+                        <p><b>IN SERVICE /</b> 2019.11~2020.11</p>
+                        <p><b>USED SKILLS /</b> Vue.js, Nuxt.js, MongoDB, Mongoose, Express.js, bootstrap-vue...</p>
+                        <p>
+                            <b>DESCRIPTION /</b><br />
+                            게임 'Arcaea'의 전적 시스템 및 미션 기능을 제공하는 사이트입니다. 누적 이용자 수 1만 3천명, 일일 평균 접속자 수 300명대를 기록하였고 기록 분석, 내보내기, 미션, 멀티플레이 등 다양한 기능을 지원하였습니다. 게임 API 변경과 유지보수 문제로 현재는 서비스가 중단되었습니다.
+                        </p>
+                    </article>
+                    <article>
+                        <p><b>IN DEVELOPMENT /</b> 2022.01~</p>
+                        <p><b>USED SKILLS /</b> AWS Lambda, DynamoDB, CloudFormation, CloudFront, TypeScript, Svelte...</p>
+                        <p>
+                            <b>DESCRIPTION /</b><br />
+                            학생회 내부의 전산 관리를 위해 제작된 그룹웨어입니다. IBM의 Carbon Design System 을 활용하여 디자인하였고, 숭실대학교 통합 로그인과 연동시켜 이용의 편리함을 높였습니다. 또한 모든 백엔드 서비스는 서버리스 아키텍쳐로 구성되어 유지 비용이 적은 장점이 있습니다.
+                        </p>
                     </article>
                 </div>
-                <article>
-                    <p><b>IN DEVELOPMENT /</b> 2021.07~PRODUCTION DAY</p>
-                    <p><b>IN PRODUCTION /</b> 2021.09.30~2021.10.01</p>
-                    <p><b>ROLE /</b> 개발팀 리드(Lead Developer)</p>
-                    <p><b>USED SKILLS /</b> Kotlin, Spring Boot, Google Cloud Platform, Pulumi...</p>
-                    <p>
-                        <b>DESCRIPTION /</b><br />
-                        이틀간 약 300명의 크리에이터들을 대상으로 게임 "마인크래프트" 내 메타버스 공간에서 운동회를 진행한다는 컨셉으로 진행된 행사입니다. 서버와 클라이언트의 부하가 큰 게임의 특성 상 클라이언트와 서버의 수정, 콘텐츠 구현을 중점으로 최적화, 클라우드 관리까지 총괄하여 진행하였습니다.
-                    </p>
-                </article>
             </section>
         </div>
     </section>
     <section class="full-page">
         <div id="contacts" class="container">
             <h1><span class="bg-black color-white intro-subheader">CONTACTS</span></h1>
-            <form>
+            <form id="contacts_form">
                 <div class="form-group">
                     <div>
-                        <label for="name">이름</label>
-                        <input type="text" id="name" />
+                        <label class="block-label" for="name">이름</label>
+                        <input class="input-text" type="text" id="name" />
                     </div>
                     <div>
-                        <label for="password">비밀번호</label>
-                        <input type="password" id="password" />
+                        <label class="block-label" for="password">비밀번호</label>
+                        <input class="input-text" type="password" id="password" />
                     </div>
                 </div>
-                <label for="title">제목</label>
-                <input type="text" id="title" />
-                <label for="content">내용</label>
-                <textarea id="content"></textarea>
+                <label class="block-label" for="title">제목</label>
+                <input class="input-text" type="text" id="title" />
+                <label class="block-label" for="content">내용</label>
+                <textarea class="input-text" id="content"></textarea>
                 <div class="submit">
-                    <button type="submit">등록</button>
+                    <p id="alert_post" class="color-red"></p>
+                    <button class="btn-submit btn-lg" type="submit">등록</button>
                 </div>
             </form>
             <section>
-                <article>
-                    <h5>이름</h5>
-                    <h2>제목</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto aspernatur consectetur consequuntur debitis dicta esse et fugit inventore itaque iure, iusto magni minus omnis optio, quam reiciendis voluptatem voluptatum.</p>
+                <% for (let i = 0;i < posts.length; i++) { %>
+                <hr>
+                <article id="post_<%= posts[i]['id'] %>">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="display: flex;">
+                            <h5>#<%= posts[i]['id'] + 1 %> / 작성자: </h5>
+                            <h5 id="post_<%= posts[i]['id'] %>_name"><%= posts[i]['name'] %></h5>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--size-2)">
+                            <button key="<%= posts[i]['id'] %>" class="btn-edit btn" type="button">수정</button>
+                            <button key="<%= posts[i]['id'] %>" class="btn-delete btn" type="button">삭제</button>
+                        </div>
+                    </div>
+                    <h2 id="post_<%= posts[i]['id'] %>_title"><%= posts[i]['title'] %></h2>
+                    <p id="post_<%= posts[i]['id'] %>_content"><%= posts[i]['content'] %></p>
                 </article>
+                <% } %>
             </section>
         </div>
     </section>
+    <dialog id="edit">
+        <section>
+            <header>
+                <h1>글 수정하기</h1>
+            </header>
+            <main>
+                <form id="contacts_edit_form">
+                    <div class="form-group">
+                        <div>
+                            <label class="block-label" for="name_edit">이름</label>
+                            <input class="input-text" type="text" id="name_edit" disabled />
+                        </div>
+                        <div>
+                            <label class="block-label" for="password_edit">비밀번호</label>
+                            <input class="input-text" type="password" id="password_edit" />
+                        </div>
+                    </div>
+                    <label class="block-label" for="title_edit">제목</label>
+                    <input class="input-text" type="text" id="title_edit" />
+                    <label class="block-label" for="content_edit">내용</label>
+                    <textarea class="input-text" id="content_edit"></textarea>
+                    <div class="submit">
+                        <button id="close_edit" class="btn-secondary btn" type="button">취소</button>
+                        <button class="btn-edit btn-lg" type="submit">수정</button>
+                    </div>
+                </form>
+            </main>
+            <footer>
+                <p id="alert_edit" class="color-red"></p>
+            </footer>
+        </section>
+    </dialog>
+    <dialog id="delete">
+        <section>
+            <header>
+                <h1>글 삭제하기</h1>
+            </header>
+            <main>
+                <form id="contacts_delete_form">
+                    <label class="block-label" for="password">비밀번호</label>
+                    <input class="input-text" type="password" id="password_delete" />
+                    <div class="submit">
+                        <button id="close_delete" class="btn-secondary btn" type="button">취소</button>
+                        <button class="btn-delete btn-lg" type="submit">삭제</button>
+                    </div>
+                </form>
+            </main>
+            <footer>
+                <p id="alert_delete" class="color-red"></p>
+            </footer>
+        </section>
+    </dialog>
 </body>
 </html>
