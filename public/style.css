@@ -275,6 +275,7 @@ p, h1, h2, h3, h4, h5, h6 {
     border: 2px solid black;
     border-radius: 12px;
     box-sizing: border-box;
+    transition: all 0.2s;
 }
 
 #project_thumbnail_list > div {
