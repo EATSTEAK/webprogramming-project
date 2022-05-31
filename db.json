@@ -1,40 +1,4 @@
 {
-  "posts": [
-    {
-      "id": 3,
-      "name": "테스트",
-      "title": "Test",
-      "content": "This is Test.",
-      "password": "123"
-    },
-    {
-      "id": 4,
-      "name": "테스트",
-      "title": "Test",
-      "content": "This is Test.",
-      "password": "000000"
-    },
-    {
-      "id": 5,
-      "name": "테스",
-      "title": "형",
-      "content": "This is Test.",
-      "password": "ddd"
-    },
-    {
-      "id": 6,
-      "name": "asdopasdo",
-      "title": "asd",
-      "content": "This is Test.",
-      "password": "aosdapsd"
-    },
-    {
-      "id": 7,
-      "name": "asdopasdo",
-      "title": "asd",
-      "content": "This is Test.",
-      "password": "aosdapsd"
-    }
-  ],
-  "increment": 9
+  "posts": [],
+  "increment": 0
 }

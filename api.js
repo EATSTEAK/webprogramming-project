@@ -53,7 +53,7 @@ apiRouter.post("/posts", async (req, res) => {
   });
 });
 
-apiRouter.put("/posts/:postId", async (req, res) => {
+apiRouter.patch("/posts/:postId", async (req, res) => {
   if (
     !req.headers.authorization ||
     !req.headers.authorization.startsWith("Basic ")

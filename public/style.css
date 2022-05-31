@@ -16,7 +16,7 @@ html {
 body {
     display: flow-root;
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-    margin: 0;
+    margin: 0;transition: 2s linear all;
 }
 
 .container {
@@ -119,10 +119,21 @@ body {
 }
 
 .g-blue-red {
-    background: linear-gradient(272.89deg, #E81123 1.91%, #E81123 35.3%, #0078D7 96.2%);
+    animation: 3s linear 0s infinite burn;
+    background: linear-gradient(272.89deg, #E81123 1.91%, #0078D7 35.3%, #E81123 96.2%);
+    background-size: 600px 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
+}
+
+@keyframes burn {
+    from {
+        background-position: 0 50%;
+    }
+    to {
+        background-position: 600px 50%;
+    }
 }
 
 .color-red {
@@ -181,6 +192,10 @@ p, h1, h2, h3, h4, h5, h6 {
     padding: 0;
 }
 
+#career_list li {
+    transition: 0.5s linear all;
+}
+
 #career_list img {
     border-radius: 12px;
 }
@@ -198,8 +213,31 @@ p, h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 
+@keyframes fadeInFromTop {
+    from {
+        transform: translate(0, -16px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+@keyframes fadeInFromLeft {
+    from {
+        transform: translate(-16px, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
 #career_detail_list .selected {
     display: block;
+    animation-duration: 0.5s;
+    animation-name: fadeInFromTop;
 }
 
 #careers li {
@@ -236,6 +274,7 @@ p, h1, h2, h3, h4, h5, h6 {
 #project_list .selected img {
     border: 2px solid black;
     border-radius: 12px;
+    box-sizing: border-box;
 }
 
 #project_thumbnail_list > div {
@@ -316,6 +355,8 @@ button.btn-submit {
 }
 
 #project_thumbnail_list > div {
+    animation-duration: 0.5s;
+    animation-name: fadeInFromLeft;
     position: relative;
     width: 100%;
     height: 380px;
@@ -393,6 +434,8 @@ button:hover {
 }
 
 dialog[open] {
+    animation-duration: 0.5s;
+    animation-name: fadeInFromTop;
     position: fixed;
     z-index: 3;
     top: 0;

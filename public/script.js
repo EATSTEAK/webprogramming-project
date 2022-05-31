@@ -153,7 +153,7 @@ function createPost(name, password, title, content) {
 function editPost(id, name, password, title, content) {
   const auth = toBinary(`${name}:${password}`);
   fetch(`/api/posts/${id}`, {
-    method: "PUT",
+    method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Basic ${auth}`,
@@ -196,10 +196,40 @@ function deletePost(id, name, password) {
     });
 }
 
+function initScrollListener() {
+  console.log("scroll listener init");
+  window.addEventListener("scroll", (event) => {
+    const selectOne = (selected) => {
+      ["about", "skills", "projects", "contacts"].forEach((id, idx) => {
+        const elem = document.querySelectorAll(".navbar-link > li")[idx];
+        if (id !== selected) elem.classList.remove("navbar-link-selected");
+        else elem.classList.add("navbar-link-selected");
+      });
+    };
+    const skillY = document.querySelector("#skills").getBoundingClientRect().y;
+    const projectY = document
+      .querySelector("#projects")
+      .getBoundingClientRect().y;
+    const contactY = document
+      .querySelector("#contacts")
+      .getBoundingClientRect().y;
+    if (contactY <= 70) {
+      selectOne("contacts");
+    } else if (projectY <= 70) {
+      selectOne("projects");
+    } else if (skillY <= 70) {
+      selectOne("skills");
+    } else {
+      selectOne("about");
+    }
+  });
+}
+
 let operationTarget = undefined;
 
 window.addEventListener("DOMContentLoaded", () => {
   initCareers();
   initProjects();
   initContacts();
+  initScrollListener();
 });
